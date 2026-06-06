@@ -26,7 +26,9 @@ To build the binaries, simply open a Terminal (or Ghostty or iTerm, etc.) in the
 
 `./build_fftw.sh`
 
-The time required to complete this process may vary depending on your system (processor, memory, etc.). On my M1 system, it typically takes approximately 3 minutes. Upon completion, you will find the following artifacts:
+The time required to complete this process may vary depending on your system (processor, memory, etc.). On my M1 system, it typically takes approximately 6 minutes. Upon completion, you will find the following artifacts:
+
+ --- include: The lone header file for the FFTW libraries.
 
  --- shared_libs: Static (.a) and dynamic library (.dylib) binaries for both floating and double precision versions of FFTW. Please note that the libraries are deleted each time the build script is executed.
  
