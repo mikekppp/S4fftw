@@ -56,4 +56,4 @@ dkms.conf
 *.dwo
 
 # tests directory
-tests/*
+tests/*.txt
