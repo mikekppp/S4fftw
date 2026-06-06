@@ -9,3 +9,6 @@ shared_libs/*.dylib
 
 # tests directory
 tests/*.txt
+
+# tar.gz from fftw.org
+src/*
