@@ -1,12 +1,12 @@
 # S4fftw
 
-##Project to build the FFTW libraries for Apple Silicon on macOS.
+## Project to build the FFTW libraries for Apple Silicon on macOS.
 
 ### Project Overview
 
 This project aims to develop the FFTW libraries for Apple Silicon on macOS.
 
-###Disclaimer
+### Disclaimer
 
 This project is *not* intended as an official distribution of the [FFTW](http://www.fftw.org) libraries nor as a general source for binaries on Apple platforms.
 
