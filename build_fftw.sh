@@ -18,12 +18,16 @@
 
 ############################################################################
 
+# define the root directory for this project
+ROOT_DIR="$PWD"
+
+
 # define the root directory for the official fftw source code
 FFTW_SRC="fftw-3.3.11"
 
 
 # define the root directory for test files
-TEST_ROOT_DIR="../tests"
+TEST_ROOT_DIR="$ROOT_DIR/tests"
 
 
 # output file for the post build test of the double precision library
@@ -41,11 +45,11 @@ FLOAT_FILE_OUTPUT="$TEST_ROOT_DIR/$FILENAME_FLOAT"
 
 
 # the shared_lib directory from the src directory
-LIB_ROOT_DIR="../shared_libs"
+LIB_ROOT_DIR="$ROOT_DIR/shared_libs"
 
 
 # define the root directory for the include file
-INCLUDE_ROOT_DIR="../include"
+INCLUDE_ROOT_DIR="$ROOT_DIR/include"
 
 
 
