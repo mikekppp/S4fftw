@@ -7,8 +7,8 @@
 #
 #   Copyright © 2026 Michael Papp. All rights reserved.
 #
+#   fftw official download site is https://www.fftw.org/download.html
 ############################################################################
-
 
 
 
@@ -22,8 +22,12 @@
 ROOT_DIR="$PWD"
 
 
-# define the root directory for the official fftw source code
+# define the version (and directory name) for the official fftw source code
 FFTW_SRC="fftw-3.3.11"
+
+
+# define the download URL for the official fftw library
+FFTW_URL="https://www.fftw.org/$FFTW_SRC.tar.gz"
 
 
 # define the root directory for test files
@@ -59,8 +63,15 @@ INCLUDE_ROOT_DIR="$ROOT_DIR/include"
 
 ############################################################################
 
-# cd into the src directory
-cd "$FFTW_SRC"
+
+# download FFTW if the source directory does not exist, otherwise remove all build artifacts
+if [ -d "$FFTW_SRC" ] && [ "$(ls -A "$FFTW_SRC")" ]; then
+    cd "$FFTW_SRC"
+    make clean
+else
+    curl -fsSL --retry 3 --retry-all-errors "$FFTW_URL" | tar -xz
+    cd "$FFTW_SRC"
+fi
 
 
 # delete the library files from the last build
@@ -74,10 +85,6 @@ fi
 if [ -d "$INCLUDE_ROOT_DIR" ] && [ "$(ls -A "$INCLUDE_ROOT_DIR")" ]; then
     rm -rf "$INCLUDE_ROOT_DIR"/*.h
 fi
-
-
-# ensure there are no build artifacts from the last build
-make clean
 
 
 ############################################################################
